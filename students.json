@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Jaazeniah Mirano",
+    "year": 3,
+    "course": "BSIT",
+    "grades": [90, 85, 88, 92],
+    "enrolled": true
+  },
+  {
+    "id": 2,
+    "name": "Joannah Elgario",
+    "year": 3,
+    "course": "BSIT",
+    "grades": [95, 91, 94, 96],
+    "enrolled": true
+  },
+  {
+    "id": 3,
+    "name": "Marie Mar",
+    "year": 3,
+    "course": "BEED",
+    "grades": [92, 89, 90, 88],
+    "enrolled": false
+  },
+  {
+    "id": 4,
+    "name": "Ana Cruz",
+    "year": 4,
+    "course": "BSAB",
+    "grades": [89, 92, 90, 94],
+    "enrolled": true
+  },
+  {
+    "id": 5,
+    "name": "Sofia Garcia",
+    "year": 2,
+    "course": "BEED",
+    "grades": [87, 90, 86, 89],
+    "enrolled": false
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "totalStudents": 5,
+  "overallAverageGrade": 90.35,
+  "topPerformingStudent": {
+    "name": "Joannah Elgario",
+    "averageGrade": 94
+  },
+  "breakdownByCourse": [
+    {
+      "course": "BSIT",
+      "averageGrade": 91.375
+    },
+    {
+      "course": "BSAB",
+      "averageGrade": 91.25
+    },
+    {
+      "course": "BEED",
+      "averageGrade": 88.875
+    }
+  ]
+}
