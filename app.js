@@ -1,11 +1,11 @@
 const fs = require("fs");
 
-// Read students.json
+
 const data = fs.readFileSync("students.json", "utf8");
 const students = JSON.parse(data);
 
 
-// 1. Get the average grade of a student
+
 function getAverageGrade(student) {
     if (!student || !Array.isArray(student.grades) || student.grades.length === 0) {
         return 0;
@@ -16,7 +16,7 @@ function getAverageGrade(student) {
 }
 
 
-// 2. Get the top N students
+
 function getTopStudents(students, n) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -26,24 +26,24 @@ function getTopStudents(students, n) {
         throw new Error("n must be a non-negative integer.");
     }
 
-    // filter() - remove invalid student records
+    
     const validStudents = students.filter(student =>
         student && typeof student.name === "string"
     );
 
-    // map() - create new student objects with average grades
+    
     return validStudents
         .map(student => ({
             ...student,
             averageGrade: getAverageGrade(student)
         }))
-        // sort() - highest average first
+        
         .sort((a, b) => b.averageGrade - a.averageGrade)
         .slice(0, n);
 }
 
 
-// 3. Group students by course
+
 function groupByCourse(students) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -63,7 +63,7 @@ function groupByCourse(students) {
 }
 
 
-// 4. Get enrolled and not enrolled count
+
 function getEnrolledCount(students) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -87,7 +87,7 @@ function getEnrolledCount(students) {
 }
 
 
-// 5. Find a student by name
+
 function findStudent(students, name) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -105,7 +105,7 @@ function findStudent(students, name) {
 }
 
 
-// 6. Get average grade for each course
+
 function getCourseAverages(students) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -133,7 +133,7 @@ function getCourseAverages(students) {
 }
 
 
-// 7. Export summary
+
 function exportSummary(students) {
     if (!Array.isArray(students)) {
         throw new Error("Students must be an array.");
@@ -167,7 +167,7 @@ function exportSummary(students) {
 }
 
 
-// MAIN FUNCTION
+
 function main() {
 
     console.log("==========================================");
@@ -175,12 +175,12 @@ function main() {
     console.log("==========================================");
 
 
-    // Total student count
+    
     console.log("\n--- TOTAL STUDENTS ---");
     console.log(`Total Students: ${students.length}`);
 
 
-    // Enrollment count
+    
     console.log("\n--- ENROLLMENT STATUS ---");
 
     const enrollment = getEnrolledCount(students);
@@ -189,7 +189,7 @@ function main() {
     console.log(`Not Enrolled: ${enrollment.notEnrolled}`);
 
 
-    // Top students
+    
     console.log("\n--- TOP-PERFORMING STUDENTS ---");
 
     const topStudents = getTopStudents(students, 3);
@@ -206,7 +206,7 @@ function main() {
     }
 
 
-    // Group by course
+    
     console.log("\n--- STUDENTS GROUPED BY COURSE ---");
 
     const grouped = groupByCourse(students);
@@ -220,7 +220,7 @@ function main() {
     });
 
 
-    // Find student
+    
     console.log("\n--- FIND STUDENT ---");
 
     const searchName = "Joannah Elgario";
@@ -236,7 +236,7 @@ function main() {
     }
 
 
-    // Course averages
+    
     console.log("\n--- AVERAGE GRADE BY COURSE ---");
 
     const courseAverages = getCourseAverages(students);
@@ -252,7 +252,7 @@ function main() {
     }
 
 
-    // Summary
+    
     console.log("\n--- SUMMARY ---");
 
     const summary = exportSummary(students);
@@ -275,7 +275,7 @@ function main() {
     }
 
 
-    // Export summary to report.json
+    
     fs.writeFileSync(
         "report.json",
         JSON.stringify(summary, null, 2)
@@ -290,5 +290,5 @@ function main() {
 }
 
 
-// Run the program
+
 main();
