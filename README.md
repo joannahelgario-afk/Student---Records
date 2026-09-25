@@ -29,3 +29,8 @@ The Student Records Data Processor is a JavaScript project that manages and anal
 
 ```bash
 node app.js
+
+
+## Author
+
+Joannah Marie Elgario
